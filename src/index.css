@@ -1,0 +1,21 @@
+:root {
+  --main_text_color: #000;
+  --boundary_light_text_color: #bcbcbc;
+  --background_color: #ffffff;
+  --buttons_and_boxes: #184d9a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
