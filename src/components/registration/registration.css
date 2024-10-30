@@ -1,0 +1,41 @@
+.inquiry-field {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: flex-end;
+  justify-content: start;
+  gap: 2em;
+  column-gap: 0;
+  padding: 2em;
+}
+
+label {
+  font-size: 0.9em;
+}
+
+input {
+  width: 80%;
+  height: 2.6em;
+  display: block;
+  border: 1px solid var(--boundary_light_text_color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 0.5em;
+  letter-spacing: 0.1em;
+  border-radius: 3px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+button {
+  color: var(--background_white_text_color);
+  font-size: 1.1em;
+  background-color: var(--buttons_and_boxes);
+  border-radius: 5px;
+  padding: 0.5em 1.5em;
+  border: none;
+}

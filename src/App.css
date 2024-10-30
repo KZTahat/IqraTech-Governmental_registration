@@ -1,0 +1,40 @@
+.main-container {
+  width: 100%;
+  height: fit-content;
+  padding: 2em 4.5em;
+  line-height: 2em;
+}
+
+.main-container h2,
+.main-container .below-heading {
+  font-size: 1.2em;
+}
+
+.main-container .below-heading {
+  color: var(--boundary_light_text_color);
+}
+
+.registration-container {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  padding: 1.5em 1em;
+  margin-top: 2em;
+  border-radius: 3px;
+  border: 2px solid var(--boundary_light_text_color);
+}
+
+.registration-heading-box {
+    position: absolute;
+    top: -1.5em;
+    right: 1.8em;
+    padding: 0.2em 1em;
+    background-color: var(--buttons_and_boxes);
+    border-radius: 3px;
+}
+
+.registration-heading-box span {
+    color: var(--background_white_text_color);
+    font-weight: 600;
+    word-spacing: 0.1em;
+}

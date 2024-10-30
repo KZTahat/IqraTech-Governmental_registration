@@ -1,0 +1,27 @@
+.communi-info-cont {
+  position: relative;
+  padding: 2em;
+  border: 2px solid var(--boundary_light_text_color);
+  margin: 5em 0 2em 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5em;
+  column-gap: 0;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.communi-heading-box {
+    position: absolute;
+    top: -1.5em;
+    right: 1.8em;
+    padding: 0.2em 1em;
+    background-color: var(--buttons_and_boxes);
+    border-radius: 3px;
+}
+
+.communi-heading-box span {
+    color: var(--background_white_text_color);
+    font-weight: 600;
+    word-spacing: 0.1em;
+}
