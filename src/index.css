@@ -1,8 +1,9 @@
 :root {
   --main_text_color: #000;
   --background_white_text_color: #ffffff;
-  --boundary_light_text_color: #dcdcdc;
+  --boundary_light_text_color: #c4c4c4;
   --buttons_and_boxes: #184d9a;
+  --danger_color: #960505;
 }
 
 * {

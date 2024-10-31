@@ -3,12 +3,16 @@
   padding: 2em;
   border: 2px solid var(--boundary_light_text_color);
   margin: 5em 0 2em 0;
+}
+
+.communi-form {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5em;
-  column-gap: 0;
+  column-gap: 1.5em;
   justify-content: center;
   align-items: flex-end;
+  margin: 1em 0;
 }
 
 .communi-heading-box {

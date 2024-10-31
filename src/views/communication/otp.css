@@ -1,0 +1,30 @@
+.otp-sender-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    row-gap: 1em;
+}
+
+.otp-sender-container h3 {
+    width: 100%;
+    border-bottom: 1px solid var(--boundary_light_text_color);
+}
+
+.otp-sender-container label{
+    width: 100%;
+    font-size: 0.9em;
+}
+
+.otp-try-again {
+    color: var(--buttons_and_boxes);
+}
+
+.otp-sender-container .otp-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

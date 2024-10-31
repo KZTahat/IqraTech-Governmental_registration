@@ -39,5 +39,10 @@
 }
 
 .document-upload-section span {
+    font-size: 0.9em;
+}
+
+.upload-alerts {
+    color: red;
     font-size: 0.8em;
 }

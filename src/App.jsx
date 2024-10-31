@@ -1,5 +1,5 @@
 import "./App.css";
-import { Communication, Registration, Upload } from "./components";
+import { Communication, Registration, Upload } from "./views";
 
 function App() {
   return (
@@ -16,6 +16,12 @@ function App() {
 
         <Upload />
       </section>
+      <div className="main-buttons-cont">
+        <button>انشاء حساب</button>
+        <button>خروج</button>
+      </div>
+
+      
     </div>
   );
 }
