@@ -1,4 +1,5 @@
 import "./App.css";
+import { Button } from "./components";
 import { Communication, Registration, Upload } from "./views";
 
 function App() {
@@ -17,11 +18,9 @@ function App() {
         <Upload />
       </section>
       <div className="main-buttons-cont">
-        <button>انشاء حساب</button>
-        <button>خروج</button>
+        <Button text="انشاء حساب" />
+        <Button text="خروج" />
       </div>
-
-      
     </div>
   );
 }

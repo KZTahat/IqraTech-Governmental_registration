@@ -5,7 +5,6 @@ const useFormData = (initialState) => {
 
   const handleChange = useCallback((e) => {
     const { name, value } = e.target;
-    console.log(name, value);
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,

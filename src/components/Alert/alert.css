@@ -1,0 +1,12 @@
+.alert-container {
+    width: 100%;
+    max-width: 30em;
+    background-color: #f0f2f9;
+    padding: 0 0.5em;
+    border-radius: 3px;
+}
+
+.alert-container span:nth-child(1){ 
+    font-size: 1.2em;
+    font-weight: 600;
+}

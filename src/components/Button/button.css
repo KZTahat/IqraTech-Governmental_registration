@@ -1,0 +1,11 @@
+.button-component {
+  height: 1.9em;
+  color: var(--background_white_text_color);
+  font-size: 1.1em;
+  background-color: var(--buttons_and_boxes);
+  border-radius: 5px;
+  padding: 0 0.7em;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}

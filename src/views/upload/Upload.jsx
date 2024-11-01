@@ -1,3 +1,4 @@
+import { Button } from "../../components";
 import "./upload.css";
 function Upload() {
   return (
@@ -13,7 +14,7 @@ function Upload() {
               تحميل وثيقة اثبات قدرة الموظف من الجهة الحكومية على تمثيلها
             </span>
           </div>
-          <button>تحميل</button>
+          <Button text="تحميل" />
         </div>
         <div className="upload-alerts">
           <p>* السماح بارفاق أنواع معينة ققط مثل PDF او png او jpg او jpeg</p>

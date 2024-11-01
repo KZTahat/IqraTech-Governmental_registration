@@ -30,13 +30,3 @@ input {
   justify-content: start;
   align-items: center;
 }
-
-button {
-  color: var(--background_white_text_color);
-  font-size: 1.1em;
-  background-color: var(--buttons_and_boxes);
-  border-radius: 5px;
-  padding: 0.5em 1.5em;
-  border: none;
-  cursor: pointer;
-}
