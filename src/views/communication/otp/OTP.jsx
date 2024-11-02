@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Alert, Button } from "../../components";
-import useFormData from "../../CustomHooks/useFormData";
+import { Alert, Button } from "../../../components";
+import useFormData from "../../../CustomHooks/useFormData";
 import "./otp.css";
 
 function OTP({
@@ -22,13 +22,13 @@ function OTP({
   const [shouldStartCountdown, setShouldStartCountdown] = useState(false);
 
   useEffect(() => {
-    OTP_countDown(120);
+    OTP_countDown(10);
   }, []);
 
   useEffect(() => {
     // Only start OTP countdown when shouldStartCountdown is true
     if (shouldStartCountdown) {
-      OTP_countDown(120);
+      OTP_countDown(10);
       setShouldStartCountdown(false); // Reset trigger
     }
   }, [shouldStartCountdown]);
@@ -38,24 +38,24 @@ function OTP({
       if (!waiting) setWaiting(true);
       if (validity) setValidity(false);
       console.log("phone verification");
-      // axios
-      //   .post(
-      //     `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/phone/verifyCode`,
-      //     {
-      //       verification_code: verificationCode,
-      //       key: formData.otp,
-      //     }
-      //   )
-      //   .then((response) => {
-      //     if (response.data.success) setValidity(true);
-      //   })
-      //   .catch((err) => {
-      //     console.log(err.response.data);
-      //   })
-      //   .finally(() => {
-      //     setWaiting(false);
-      //     formData.otp = "";
-      //   });
+      axios
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/phone/verifyCode`,
+          {
+            verification_code: verificationCode,
+            key: formData.otp,
+          }
+        )
+        .then((response) => {
+          if (response.data.success) setValidity(true);
+        })
+        .catch((err) => {
+          console.log(err.response.data);
+        })
+        .finally(() => {
+          setWaiting(false);
+          formData.otp = "";
+        });
     } catch (error) {
       console.log(error.message);
     }
@@ -66,24 +66,24 @@ function OTP({
       if (!waiting) setWaiting(true);
       if (validity) setValidity(false);
       console.log(formData.otp, verificationCode);
-      // axios
-      //   .post(
-      //     `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/email/verifyCode`,
-      //     {
-      //       verification_code: verificationCode,
-      //       key: formData.otp,
-      //     }
-      //   )
-      //   .then((response) => {
-      //     if (response.data.success) setValidity(true);
-      //   })
-      //   .catch((err) => {
-      //     console.log(err.response.data);
-      //   })
-      //   .finally(() => {
-      //     setWaiting(false);
-      //     formData.otp = "";
-      //   });
+      axios
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/email/verifyCode`,
+          {
+            verification_code: verificationCode,
+            key: formData.otp,
+          }
+        )
+        .then((response) => {
+          if (response.data.success) setValidity(true);
+        })
+        .catch((err) => {
+          console.log(err.response.data);
+        })
+        .finally(() => {
+          setWaiting(false);
+          formData.otp = "";
+        });
     } catch (error) {
       console.log(console.log(error.message));
     }

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Alert, Button, DataModel } from "../../components";
 import useFormData from "../../CustomHooks/useFormData";
 import "./communication.css";
-import OTP from "./OTP";
+import OTP from "./otp/OTP.jsx";
 
 function Communication() {
   let [showOTPModel, setShowOTPModel] = useState(false);
@@ -23,18 +23,18 @@ function Communication() {
       setSendTo(0);
       if (!showOTPModel) setShowOTPModel(true);
       console.log("otp sent");
-      // axios
-      //   .post(
-      //     `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/verifyNonUserPhone`,
-      //     { phone: formData.phoneNumber }
-      //   )
-      //   .then((response) => {
-      //     console.log(response.data);
-      //     setVerificationCode(response.data.key);
-      //   })
-      //   .catch((err) => {
-      //     console.log(err.message);
-      //   });
+      axios
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/verifyNonUserPhone`,
+          { phone: formData.phoneNumber }
+        )
+        .then((response) => {
+          console.log(response.data);
+          setVerificationCode(response.data.key);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
     } catch (err) {
       console.log(err.message);
     }
