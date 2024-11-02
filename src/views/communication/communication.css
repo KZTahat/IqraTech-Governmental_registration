@@ -5,7 +5,17 @@
   margin: 5em 0 2em 0;
 }
 
-.communi-form {
+.communi-phone-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5em;
+  column-gap: 1.5em;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 1em 0;
+}
+
+.communi-email-form {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5em;
@@ -16,16 +26,40 @@
 }
 
 .communi-heading-box {
-    position: absolute;
-    top: -1.5em;
-    right: 1.8em;
-    padding: 0.2em 1em;
-    background-color: var(--buttons_and_boxes);
-    border-radius: 3px;
+  position: absolute;
+  top: -1.5em;
+  right: 1.8em;
+  padding: 0.2em 1em;
+  background-color: var(--buttons_and_boxes);
+  border-radius: 3px;
 }
 
 .communi-heading-box span {
-    color: var(--background_white_text_color);
-    font-weight: 600;
-    word-spacing: 0.1em;
+  color: var(--background_white_text_color);
+  font-weight: 600;
+  word-spacing: 0.1em;
+}
+
+@media (max-width: 1035px) {
+  .communi-info-cont {
+    padding: 1em;
+  }
+}
+
+@media (max-width: 860px) {
+  .communi-phone-form {
+    grid-template-columns: 1fr 1fr;
+  }
+  .communi-email-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 490px) {
+  .communi-phone-form {
+    grid-template-columns: 1fr;
+  }
+  .communi-email-form {
+    grid-template-columns: 1fr;
+  }
 }

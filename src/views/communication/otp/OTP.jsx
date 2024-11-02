@@ -22,13 +22,13 @@ function OTP({
   const [shouldStartCountdown, setShouldStartCountdown] = useState(false);
 
   useEffect(() => {
-    OTP_countDown(10);
+    OTP_countDown(120);
   }, []);
 
   useEffect(() => {
     // Only start OTP countdown when shouldStartCountdown is true
     if (shouldStartCountdown) {
-      OTP_countDown(10);
+      OTP_countDown(120);
       setShouldStartCountdown(false); // Reset trigger
     }
   }, [shouldStartCountdown]);

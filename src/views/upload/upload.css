@@ -9,40 +9,76 @@
 }
 
 .upload-header {
-    color: var(--buttons_and_boxes);
-    font-size: 1.1em;
-    font-weight: 600;
+  color: var(--buttons_and_boxes);
+  font-size: 1.1em;
+  font-weight: 600;
 }
 
 .document-upload-section {
-    border: 1px dashed var(--boundary_light_text_color);
-    width: 100%;
-    height: 4em;
-    padding: 1em;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 1em 0;
+  border: 1px dashed var(--boundary_light_text_color);
+  width: 100%;
+  height: 4em;
+  padding: 1em;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1em 0;
 }
 
 .document-upload-section div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .document-upload-section i {
-    font-size: 2.8em;
-    margin-left: 0.5em;
-    color: #a1a1a1;
+  font-size: 2.8em;
+  margin-left: 0.5em;
+  color: #a1a1a1;
 }
 
 .document-upload-section span {
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
 
 .upload-alerts {
-    color: red;
+  color: red;
+  font-size: 0.8em;
+}
+
+@media (max-width: 860px) {
+  .upload-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 570px) {
+  .upload-container {
+    padding: 1em 0.5em;
+  }
+
+  .upload-header {
+    font-size: 0.9em;
+  }
+
+  .document-upload-section {
+    padding: 0.5em;
+  }
+
+  .document-upload-section i {
+    font-size: 2em;
+    margin-left: 0.2em;
+  }
+
+  .document-upload-section span {
     font-size: 0.8em;
+  }
+
+  .upload-alerts {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 475px) {
 }

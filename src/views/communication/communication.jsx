@@ -63,7 +63,7 @@ function Communication() {
   return (
     <div className="communi-info-cont">
       {/* Phone Number info */}
-      <form onSubmit={phoneNumberOTPsender} className="communi-form">
+      <form onSubmit={phoneNumberOTPsender} className="communi-phone-form">
         <div className="communi-heading-box">
           <span>معلومات الاتصال</span>
         </div>
@@ -99,6 +99,7 @@ function Communication() {
           />
         </div>
       </form>
+
       {phoneNumberValidity ? (
         <Alert status="success" message="تم تأكيد رقم الهاتف" />
       ) : (
@@ -106,7 +107,7 @@ function Communication() {
       )}
 
       {/* Email info */}
-      <form onSubmit={emailOTPsender} className="communi-form">
+      <form onSubmit={emailOTPsender} className="communi-email-form">
         <label htmlFor="email">
           البريد الالكتروني*
           <input
@@ -126,6 +127,7 @@ function Communication() {
           />
         </div>
       </form>
+
       {emailValidity ? (
         <Alert status="success" message="تم تأكيد بريدك الالكتروني" />
       ) : (

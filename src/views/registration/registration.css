@@ -1,13 +1,26 @@
 .inquiry-field {
   width: 100%;
   height: fit-content;
+  padding: 2em 3em;
+}
+
+.inquiry-field div:nth-child(1) {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: flex-end;
   justify-content: start;
-  gap: 2em;
+  row-gap: 2em;
   column-gap: 1.5em;
-  padding: 2em 3em;
+  margin-bottom: 2em;
+}
+
+.inquiry-field div:nth-child(2) {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: flex-end;
+  justify-content: start;
+  row-gap: 2em;
+  column-gap: 1.5em;
 }
 
 label {
@@ -29,4 +42,54 @@ input {
   display: flex;
   justify-content: start;
   align-items: center;
+}
+
+@media (max-width: 1035px) {
+  .inquiry-field {
+    padding: 1em;
+    column-gap: 1em;
+  }
+}
+
+@media (max-width: 860px) {
+  .inquiry-field div:nth-child(1) {
+    grid-template-columns: 40% 40% 20%;
+    margin-bottom: 1em;
+  }
+
+  .inquiry-field div:nth-child(2) {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1em;
+  }
+
+  label {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 600px) {
+  .inquiry-field div:nth-child(1) {
+    column-gap: 0.5em;
+  }
+
+  .inquiry-field div:nth-child(2) {
+    column-gap: 0.5em;
+  }
+}
+
+@media (max-width: 490px) {
+  .inquiry-field div:nth-child(1) {
+    grid-template-columns: 1fr;
+    gap: 0.2em;
+    margin-bottom: 0.2em;
+  }
+
+  .inquiry-field div:nth-child(2) {
+    grid-template-columns: 1fr;
+    gap: 0.2em;
+  }
+
+  .button-container {
+    margin-top: 1em;
+  }
 }
