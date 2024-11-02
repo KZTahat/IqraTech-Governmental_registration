@@ -22,14 +22,12 @@ function Communication() {
     try {
       setSendTo(0);
       if (!showOTPModel) setShowOTPModel(true);
-      console.log("otp sent");
       axios
         .post(
           `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/verifyNonUserPhone`,
           { phone: formData.phoneNumber }
         )
         .then((response) => {
-          console.log(response.data);
           setVerificationCode(response.data.key);
         })
         .catch((err) => {
@@ -46,14 +44,12 @@ function Communication() {
       setSendTo(1);
       if (!showOTPModel) setShowOTPModel(true);
 
-      // console.log(process.env);
       axios
         .post(
           `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/verifyNonUserEmail`,
           { email: formData.email }
         )
         .then((response) => {
-          console.log(response.data);
           setVerificationCode(response.data.key);
         })
         .catch((err) => {

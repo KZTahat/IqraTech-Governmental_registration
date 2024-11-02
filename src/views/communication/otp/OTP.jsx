@@ -37,7 +37,6 @@ function OTP({
     try {
       if (!waiting) setWaiting(true);
       if (validity) setValidity(false);
-      console.log("phone verification");
       axios
         .post(
           `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/phone/verifyCode`,
@@ -48,9 +47,6 @@ function OTP({
         )
         .then((response) => {
           if (response.data.success) setValidity(true);
-        })
-        .catch((err) => {
-          console.log(err.response.data);
         })
         .finally(() => {
           setWaiting(false);
@@ -65,7 +61,6 @@ function OTP({
     try {
       if (!waiting) setWaiting(true);
       if (validity) setValidity(false);
-      console.log(formData.otp, verificationCode);
       axios
         .post(
           `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/email/verifyCode`,
@@ -76,9 +71,6 @@ function OTP({
         )
         .then((response) => {
           if (response.data.success) setValidity(true);
-        })
-        .catch((err) => {
-          console.log(err.response.data);
         })
         .finally(() => {
           setWaiting(false);
