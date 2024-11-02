@@ -19,72 +19,88 @@ function OTP({
   });
   let [waiting, setWaiting] = useState(true);
   let [countDown, setCountDown] = useState(true);
+  const [shouldStartCountdown, setShouldStartCountdown] = useState(false);
+
+  useEffect(() => {
+    OTP_countDown(120);
+  }, []);
+
+  useEffect(() => {
+    // Only start OTP countdown when shouldStartCountdown is true
+    if (shouldStartCountdown) {
+      OTP_countDown(120);
+      setShouldStartCountdown(false); // Reset trigger
+    }
+  }, [shouldStartCountdown]);
 
   let phoneNumberVerifier = () => {
     try {
+      if (!waiting) setWaiting(true);
+      if (validity) setValidity(false);
       console.log("phone verification");
-      axios
-        .post(
-          `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/phone/verifyCode`,
-          {
-            verification_code: verificationCode,
-            key: formData.otp,
-          }
-        )
-        .then((response) => {
-          if (response.data.success) setValidity(true);
-        })
-        .catch((err) => {})
-        .finally(() => {
-          setWaiting(false);
-          formData.otp = "";
-        });
+      // axios
+      //   .post(
+      //     `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/phone/verifyCode`,
+      //     {
+      //       verification_code: verificationCode,
+      //       key: formData.otp,
+      //     }
+      //   )
+      //   .then((response) => {
+      //     if (response.data.success) setValidity(true);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err.response.data);
+      //   })
+      //   .finally(() => {
+      //     setWaiting(false);
+      //     formData.otp = "";
+      //   });
     } catch (error) {
-      console.log(console.log(error.message));
+      console.log(error.message);
     }
   };
 
   let emailVerifier = () => {
     try {
-      console.log("email verification");
-      axios
-        .post(
-          `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/email/verifyCode`,
-          {
-            verification_code: verificationCode,
-            key: formData.otp,
-          }
-        )
-        .then((response) => {
-          if (response.data.success) setValidity(true);
-        })
-        .catch((err) => {})
-        .finally(() => {
-          setWaiting(false);
-          formData.otp = "";
-        });
+      if (!waiting) setWaiting(true);
+      if (validity) setValidity(false);
+      console.log(formData.otp, verificationCode);
+      // axios
+      //   .post(
+      //     `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/email/verifyCode`,
+      //     {
+      //       verification_code: verificationCode,
+      //       key: formData.otp,
+      //     }
+      //   )
+      //   .then((response) => {
+      //     if (response.data.success) setValidity(true);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err.response.data);
+      //   })
+      //   .finally(() => {
+      //     setWaiting(false);
+      //     formData.otp = "";
+      //   });
     } catch (error) {
       console.log(console.log(error.message));
     }
   };
 
-  useEffect(() => {
-    OTP_countDown(5);
-  }, []);
-
   const rcANDrOTP = () => {
+    setCountDown(true); // Set countDown to true
+    setShouldStartCountdown(true); // Trigger countdown effect
     OTPsender();
-    setCountDown(true);
-    console.log(countDown);
-    OTP_countDown(5);
   };
 
   const OTP_countDown = (remaining) => {
     var m = Math.floor(remaining / 60);
     var s = remaining % 60;
-
     m = m < 10 ? "0" + m : m;
     s = s < 10 ? "0" + s : s;
+
     if (!validity)
       document.getElementById("otp_countdown").innerHTML = m + ":" + s;
     remaining -= 1;
@@ -108,6 +124,7 @@ function OTP({
           <label htmlFor="otp">
             أدخل الرمز الذي أرسلناه للتو الى: {sendTO}
             <input
+              autoFocus
               id="otp"
               name="otp"
               type="number"
