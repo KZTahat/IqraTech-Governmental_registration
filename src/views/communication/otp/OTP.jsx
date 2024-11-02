@@ -110,7 +110,12 @@ function OTP({
     <div className="otp-sender-container">
       <h3>تأكيد {header}</h3>
       {!waiting && validity ? (
-        <Alert status="success" message="تم تأكيد رقم الهاتف" />
+        <Alert
+          status="success"
+          message={`تم تأكيد ${
+            sendTO == "رقمك" ? "رقم الهاتف" : "بريدك الإلكتروني"
+          }`}
+        />
       ) : (
         <>
           <label htmlFor="otp">

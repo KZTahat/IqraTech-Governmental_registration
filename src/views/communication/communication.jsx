@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Alert, Button, DataModel } from "../../components";
 import useFormData from "../../CustomHooks/useFormData";
 import "./communication.css";
+import codes from "./Icodes";
 import OTP from "./otp/OTP.jsx";
 
 function Communication() {
@@ -25,7 +26,7 @@ function Communication() {
       axios
         .post(
           `${process.env.REACT_APP_API_BASE_URL}/api/v1/unauth/verifyNonUserPhone`,
-          { phone: formData.phoneNumber }
+          { phone: formData.internationalCode + formData.phoneNumber }
         )
         .then((response) => {
           setVerificationCode(response.data.key);
@@ -70,14 +71,21 @@ function Communication() {
 
         <label htmlFor="internationalCode">
           الرمز الدولي*
-          <input
-            id="internationalCode"
-            name="internationalCode"
-            type="number"
-            placeholder="+962"
+          <select
             onChange={handleChange}
             required
-          />
+            name="internationalCode"
+            id="internationalCode"
+          >
+            <option value="">اختر ...</option>
+            {codes.map((element) => {
+              return (
+                <option value={element.secondary}>
+                  {element.primary} {element.secondary}
+                </option>
+              );
+            })}
+          </select>
         </label>
 
         <label htmlFor="phoneNumber">
@@ -140,7 +148,7 @@ function Communication() {
           {!sendTO ? (
             <OTP
               header="رقمك"
-              sendTO={formData.phoneNumber}
+              sendTO={formData.internationalCode + formData.phoneNumber}
               OTPsender={phoneNumberOTPsender}
               verificationCode={verificationCode}
               closeDataModel={setShowOTPModel}
