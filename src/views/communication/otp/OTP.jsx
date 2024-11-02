@@ -125,8 +125,7 @@ function OTP({
             />
           </label>
           <span className="resend-otp-stat">
-            لم يصلك الرمز؟ انتظر بضع دقائق و لم يصلك الرمز؟ انتظر بضع دقائق{" "}
-            <span id="otp_countdown" /> و{" "}
+            لم يصلك الرمز؟ انتظر بضع دقائق <span id="otp_countdown" /> و{" "}
             <span className="otp-try-again">حاول مجددا</span>
           </span>
 
@@ -138,7 +137,10 @@ function OTP({
         </>
       )}
 
-      <div className="otp-buttons">
+      <div
+        className="otp-buttons"
+        style={validity ? { justifyContent: "end" } : {}}
+      >
         {/* resend OTP button */}
         {!waiting && validity ? (
           <></>

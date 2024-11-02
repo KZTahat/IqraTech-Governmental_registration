@@ -80,5 +80,13 @@
   }
 }
 
-@media (max-width: 475px) {
+@media (max-width: 455px) {
+  .document-upload-section i {
+    font-size: 1.5em;
+  }
+
+  .document-upload-section span {
+    font-size: 0.7em;
+  }
+
 }

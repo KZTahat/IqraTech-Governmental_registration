@@ -33,7 +33,7 @@
 .otp-sender-container .otp-buttons {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
   gap: 1em;
 }

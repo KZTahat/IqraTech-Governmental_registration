@@ -1,11 +1,13 @@
 .data-model {
     position: fixed;
     z-index: 2;
-    width: 41%;
-    min-height: 20em;
+    min-width: 41%;
+    width: fit-content;
+    min-height: 15em;
     height: fit-content;
-    top: 25%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 2em;
     background-color: var(--background_white_text_color);
     border-radius: 15px;
@@ -20,13 +22,4 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-}
-
-@media (max-width: 480px) {
-    .data-model {
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-    }
 }
